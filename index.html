@@ -1,0 +1,30 @@
+<head>
+  <link rel="stylesheet" href="style.css">
+<!--   <script type="text/javascript" src="index.js"></script>
+ -->
+</head>
+<body>
+  <div id="search" class="search">
+    <img src="search.svg" alt="Search" id="icon">
+    <input type="text" id="input" placeholder="Search">
+  </div>
+
+  <div id="overlay" class="overlay" style="display: none"></div>
+  <script>
+    const search = document.getElementById('search');
+    const icon = document.getElementById('icon');
+    const input = document.getElementById('input');
+    const overlay = document.getElementById('overlay');
+
+    icon.addEventListener('click', () => {
+      search.classList.add('open')
+      overlay.style.display = 'block'
+    });
+
+    overlay.addEventListener('click', () => {
+      search.classList.remove('open')
+      overlay.style.display = 'none'
+      input.value = ''
+    });
+  </script>
+</body>
